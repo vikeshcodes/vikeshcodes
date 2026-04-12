@@ -99,7 +99,7 @@ export async function generateMetadata({
         url: `https://vikeshcodes.in/content/${slug}`,
         images: [
           {
-            url: detail.featured_image || "/og-image.png",
+            url: detail.cover_image || "/og-image.png",
             width: 1200,
             height: 630,
             alt: title,
@@ -110,7 +110,7 @@ export async function generateMetadata({
         card: "summary_large_image",
         title,
         description,
-        images: [detail.featured_image || "/og-image.png"],
+        images: [detail.cover_image || "/og-image.png"],
       },
     };
   } catch {
