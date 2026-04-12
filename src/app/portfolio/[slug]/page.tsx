@@ -27,7 +27,7 @@ export async function generateMetadata({
         url: `https://vikeshcodes.in/portfolio/${slug}`,
         images: [
           {
-            url: project.item.featured_image || "/og-image.png",
+            url: project.item.cover_image || "/og-image.png",
             width: 1200,
             height: 630,
             alt: title,
@@ -38,7 +38,7 @@ export async function generateMetadata({
         card: "summary_large_image",
         title,
         description,
-        images: [project.item.featured_image || "/og-image.png"],
+        images: [project.item.cover_image || "/og-image.png"],
       },
     };
   } catch {
