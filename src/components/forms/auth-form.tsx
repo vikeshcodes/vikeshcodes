@@ -7,6 +7,8 @@ import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
+import { PUBLIC_API_BASE_URL } from "@/lib/api";
+
 const schema = z.object({
   email: z.string().email(),
   password: z.string().min(10),
@@ -157,4 +159,3 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
     </form>
   );
 }
-import { PUBLIC_API_BASE_URL } from "@/lib/api";

@@ -4,8 +4,12 @@ import { LeadForm } from "@/components/forms/lead-form";
 import { Reveal } from "@/components/ui/reveal";
 
 export const metadata: Metadata = {
-  title: "Work With Us",
-  description: "Submit a job application to work with Vikesh Codes.",
+  title: "Join the Team | Vikesh Codes",
+  description: "Collaborate with Vikesh Yadav on high-impact products and architecture. Apply to work with us.",
+  openGraph: {
+    title: "Join the Team | Vikesh Codes",
+    description: "Submit a job application to work with Vikesh Yadav on building the future of creator platforms.",
+  },
 };
 
 export default function WorkWithUsPage() {

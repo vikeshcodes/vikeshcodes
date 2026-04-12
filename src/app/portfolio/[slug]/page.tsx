@@ -15,9 +15,31 @@ export async function generateMetadata({
   const { slug } = await params;
   try {
     const project = await getPortfolioProject(slug);
+    const title = `${project.item.title} | Portfolio`;
+    const description = project.item.summary;
+
     return {
-      title: project.item.title,
-      description: project.item.summary,
+      title,
+      description,
+      openGraph: {
+        title,
+        description,
+        url: `https://vikeshcodes.in/portfolio/${slug}`,
+        images: [
+          {
+            url: project.item.featured_image || "/og-image.png",
+            width: 1200,
+            height: 630,
+            alt: title,
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title,
+        description,
+        images: [project.item.featured_image || "/og-image.png"],
+      },
     };
   } catch {
     return { title: "Portfolio Project" };

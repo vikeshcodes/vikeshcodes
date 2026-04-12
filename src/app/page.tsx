@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, BriefcaseBusiness, CirclePlay, LockKeyhole, NotebookText, TrendingUp } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Turn Content into Cashflow | Vikesh Codes",
+  description: "Vikesh Yadav's creator business operating system. Premium coding content, portfolio, and high-conversion funnels for modern developers.",
+  openGraph: {
+    title: "Turn Content into Cashflow | Vikesh Codes",
+    description: "Paid learning products, portfolio built to close inbound work, and audience-ready funnels.",
+  },
+};
 
 import { ContentCard } from "@/components/ui/content-card";
 import { Reveal } from "@/components/ui/reveal";

@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import { Reveal } from "@/components/ui/reveal";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
+  title: "Privacy Policy | Vikesh Codes",
+  description: "How we collect, use, and protect your data at vikeshcodes.in.",
 };
 
 export default function PrivacyPage() {

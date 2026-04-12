@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import { Reveal } from "@/components/ui/reveal";
 
 export const metadata: Metadata = {
-  title: "Refund Policy",
+  title: "Refund Policy | Vikesh Codes",
+  description: "Conditions and process for requesting refunds on digital products.",
 };
 
 export default function RefundPolicyPage() {

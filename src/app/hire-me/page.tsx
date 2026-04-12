@@ -11,8 +11,13 @@ const serviceRows = [
 ];
 
 export const metadata: Metadata = {
-  title: "Hire Me",
-  description: "Book Vikesh for full-stack architecture, implementation, and monetization systems.",
+  title: "Hire for Architecture & Build | Vikesh Codes",
+  description:
+    "Book Vikesh for full-stack architecture, conversion-first implementations, and monetized product platforms.",
+  openGraph: {
+    title: "Hire Vikesh Yadav | Software Architecture & Implementation",
+    description: "Turn your product idea into a monetized platform with professional architecture and build services.",
+  },
 };
 
 export default function HireMePage() {

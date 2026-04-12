@@ -1,4 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Dashboard | Vikesh Codes",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 import { Reveal } from "@/components/ui/reveal";
 import { getAccessToken, requireViewer } from "@/lib/auth";

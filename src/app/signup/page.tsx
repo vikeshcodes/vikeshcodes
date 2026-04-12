@@ -1,4 +1,13 @@
+import type { Metadata } from "next";
 import { AuthForm } from "@/components/forms/auth-form";
+
+export const metadata: Metadata = {
+  title: "Sign Up | Vikesh Codes",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 import { getViewer } from "@/lib/auth";
 import { redirect } from "next/navigation";
 

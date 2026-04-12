@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import { Reveal } from "@/components/ui/reveal";
 
 export const metadata: Metadata = {
-  title: "Terms",
+  title: "Terms of Service | Vikesh Codes",
+  description: "Rules and guidelines for using the vikeshcodes.in platform and content.",
 };
 
 export default function TermsPage() {

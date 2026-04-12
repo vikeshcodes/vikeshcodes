@@ -1,9 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
+export const metadata: Metadata = {
+  title: "Admin | Vikesh Codes",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 import { Reveal } from "@/components/ui/reveal";
 import { getAccessToken, requireViewer } from "@/lib/auth";
-import { getAdminOverview } from "@/lib/api";
+import { getAdminOverview, PUBLIC_API_BASE_URL } from "@/lib/api";
 
 export default async function AdminPage() {
   const viewer = await requireViewer("/admin");
@@ -38,7 +47,7 @@ export default async function AdminPage() {
             <h1 className="section-title mt-5">Commerce, analytics, and the operational pulse.</h1>
           </div>
           <a
-            href={`${process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000"}/admin/`}
+            href={`${PUBLIC_API_BASE_URL}/admin/`}
             target="_blank"
             rel="noreferrer"
             className="cta-primary rounded-full px-5 py-3 text-sm font-semibold"

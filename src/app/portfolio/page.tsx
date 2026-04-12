@@ -5,8 +5,12 @@ import { Reveal } from "@/components/ui/reveal";
 import { getPortfolio, unwrapCollection } from "@/lib/api";
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "Selected work and gated case studies from vikeshcodes.in.",
+  title: "Software Engineering Portfolio | Vikesh Codes",
+  description: "Selected work, architecture deep-dives, and gated case studies from Vikesh Yadav.",
+  openGraph: {
+    title: "Software Engineering Portfolio | Vikesh Codes",
+    description: "Proof of work showcasing product architecture and monetized implementations.",
+  },
 };
 
 export default async function PortfolioPage() {

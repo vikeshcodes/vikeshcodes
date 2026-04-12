@@ -5,8 +5,12 @@ import { Reveal } from "@/components/ui/reveal";
 import { getCatalogItems, unwrapCollection } from "@/lib/api";
 
 export const metadata: Metadata = {
-  title: "Paid Content",
-  description: "Premium notes, tutorials, and courses available on vikeshcodes.in.",
+  title: "Premium Coding Content | Vikesh Codes",
+  description: "Advanced notes, video tutorials, and structured courses for professional developers.",
+  openGraph: {
+    title: "Premium Coding Content | Vikesh Codes",
+    description: "Monetized learning products built for conversion and deep technical mastery.",
+  },
 };
 
 export default async function ContentIndexPage() {

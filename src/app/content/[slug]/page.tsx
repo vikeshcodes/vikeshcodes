@@ -87,9 +87,31 @@ export async function generateMetadata({
   const { slug } = await params;
   try {
     const detail = await getContentDetail(slug);
+    const title = `${detail.title} | Content`;
+    const description = detail.summary;
+
     return {
-      title: detail.title,
-      description: detail.summary,
+      title,
+      description,
+      openGraph: {
+        title,
+        description,
+        url: `https://vikeshcodes.in/content/${slug}`,
+        images: [
+          {
+            url: detail.featured_image || "/og-image.png",
+            width: 1200,
+            height: 630,
+            alt: title,
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title,
+        description,
+        images: [detail.featured_image || "/og-image.png"],
+      },
     };
   } catch {
     return { title: "Content" };

@@ -6,8 +6,12 @@ import { Reveal } from "@/components/ui/reveal";
 import { getBlogs, unwrapCollection } from "@/lib/api";
 
 export const metadata: Metadata = {
-  title: "Blogs",
-  description: "Free coding blogs, SEO landing pages, and audience-warming content from Vikesh Codes.",
+  title: "Blogs & Technical Writes | Vikesh Codes",
+  description: "Free coding blogs, software architecture guides, and technical insights from Vikesh Yadav.",
+  openGraph: {
+    title: "Blogs & Technical Writes | Vikesh Codes",
+    description: "Deep dives into architecture, Next.js, and product implementation.",
+  },
 };
 
 export default async function BlogsPage() {

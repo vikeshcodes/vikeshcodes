@@ -22,11 +22,11 @@ export function NotificationBell() {
 
   const fetchNotifications = async () => {
     try {
-      const res = await fetch("/api/v1/accounts/notifications/");
+      const res = await fetch("/api/notifications");
       if (res.ok) {
         const data = await res.json();
-        setNotifications(data.notifications);
-        setUnreadCount(data.unread_count);
+        setNotifications(data.notifications || []);
+        setUnreadCount(data.unread_count || 0);
       }
     } catch (err) {
       console.error("Failed to fetch notifications", err);
@@ -53,7 +53,7 @@ export function NotificationBell() {
 
   const markAsRead = async (id: number) => {
     try {
-      const res = await fetch(`/api/v1/accounts/notifications/${id}/read/`, {
+      const res = await fetch(`/api/notifications/${id}/read`, {
         method: "POST",
       });
       if (res.ok) {
@@ -71,7 +71,7 @@ export function NotificationBell() {
     try {
       // Logic for marking all as read (sequentially for now, or we could add a bulk backend endpoint)
       const unread = notifications.filter(n => !n.is_read).map(n => n.id);
-      await Promise.all(unread.map(id => fetch(`/api/v1/accounts/notifications/${id}/read/`, { method: "POST" })));
+      await Promise.all(unread.map(id => fetch(`/api/notifications/${id}/read`, { method: "POST" })));
       
       setNotifications(prev => prev.map(n => ({ ...n, is_read: true })));
       setUnreadCount(0);

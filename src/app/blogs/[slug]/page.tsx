@@ -15,9 +15,33 @@ export async function generateMetadata({
 
   try {
     const blog = await getBlog(slug);
+    const title = blog.meta_title || blog.title;
+    const description = blog.meta_description || blog.summary;
+
     return {
-      title: blog.meta_title || blog.title,
-      description: blog.meta_description || blog.summary,
+      title,
+      description,
+      openGraph: {
+        title,
+        description,
+        type: "article",
+        publishedTime: blog.published_at,
+        url: `https://vikeshcodes.in/blogs/${slug}`,
+        images: [
+          {
+            url: blog.featured_image || "/og-image.png",
+            width: 1200,
+            height: 630,
+            alt: title,
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title,
+        description,
+        images: [blog.featured_image || "/og-image.png"],
+      },
     };
   } catch {
     return {
